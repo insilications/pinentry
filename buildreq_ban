@@ -2,3 +2,4 @@
 # undesirable. One entry per line, no whitespace.
 pkgconfig(QtCore)
 pkgconfig(QtGui)
+pkgconfig(Qt5Core)
