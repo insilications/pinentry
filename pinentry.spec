@@ -4,7 +4,7 @@
 #
 Name     : pinentry
 Version  : 0.9.7
-Release  : 9
+Release  : 10
 URL      : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-0.9.7.tar.bz2
 Source0  : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-0.9.7.tar.bz2
 Summary  : No detailed summary available
