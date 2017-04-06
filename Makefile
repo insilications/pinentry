@@ -1,5 +1,5 @@
 PKG_NAME := pinentry
-URL := ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-0.9.7.tar.bz2
-ARCHIVES :=
+URL := ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2
+
 
 include ../common/Makefile.common
