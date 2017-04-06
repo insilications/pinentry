@@ -3,3 +3,5 @@
 libgpg-error-dev
 libassuan-dev
 ncurses-dev
+gtk+-dev
+gtk3-dev

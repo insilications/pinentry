@@ -6,7 +6,7 @@
 #
 Name     : pinentry
 Version  : 1.0.0
-Release  : 12
+Release  : 13
 URL      : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2
 Source0  : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2
 Source99 : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2.sig
@@ -15,6 +15,8 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: pinentry-bin
 Requires: pinentry-doc
+BuildRequires : gtk+-dev
+BuildRequires : gtk3-dev
 BuildRequires : libassuan-dev
 BuildRequires : libgpg-error-dev
 BuildRequires : ncurses-dev
@@ -46,7 +48,7 @@ doc components for the pinentry package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491515261
+export SOURCE_DATE_EPOCH=1491515381
 %configure --disable-static --disable-pinentry-qt4 --disable-pinentry-qt4-clipboard
 make V=1  %{?_smp_mflags}
 
@@ -58,7 +60,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1491515261
+export SOURCE_DATE_EPOCH=1491515381
 rm -rf %{buildroot}
 %make_install
 
@@ -69,6 +71,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 /usr/bin/pinentry
 /usr/bin/pinentry-curses
+/usr/bin/pinentry-gtk-2
 
 %files doc
 %defattr(-,root,root,-)
