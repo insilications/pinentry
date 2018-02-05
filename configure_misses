@@ -2,7 +2,6 @@ Configure miss: gitlog-to-changelog
 Configure miss: whether mlock is broken
 Configure miss: x86_64-generic-linux-gnu-libassuan-config
 Configure miss: byte typedef
-Configure miss: cap_set_proc in -lcap
 Configure miss: ncurses include dir
 Configure miss: QtCore >= 4.6.0 QtGui >= 4.6.0
 Configure miss: fltk-config

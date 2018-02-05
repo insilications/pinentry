@@ -6,7 +6,7 @@
 #
 Name     : pinentry
 Version  : 1.1.0
-Release  : 18
+Release  : 19
 URL      : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source0  : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source99 : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2.sig
@@ -18,6 +18,8 @@ Requires: pinentry-doc
 BuildRequires : gcr-dev
 BuildRequires : gtk3-dev
 BuildRequires : libassuan-dev
+BuildRequires : libcap-dev
+BuildRequires : libcap-ng-dev
 BuildRequires : libgpg-error-dev
 BuildRequires : ncurses-dev
 BuildRequires : pkgconfig(gcr-3)
@@ -64,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517802834
+export SOURCE_DATE_EPOCH=1517803131
 %configure --disable-static --disable-pinentry-gtk2 --disable-pinentry-qt5 --enable-pinentry-gnome3 --enable-pinentry-curses
 make  %{?_smp_mflags}
 
@@ -76,7 +78,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1517802834
+export SOURCE_DATE_EPOCH=1517803131
 rm -rf %{buildroot}
 %make_install
 ## make_install_append content

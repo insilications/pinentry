@@ -5,3 +5,5 @@ libassuan-dev
 ncurses-dev
 gtk3-dev
 gcr-dev
+libcap-dev
+libcap-ng-dev
