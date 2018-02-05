@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x249B39D24F25E3B6 (dshaw@jabberwocky.com)
 #
 Name     : pinentry
-Version  : 1.0.0
-Release  : 17
-URL      : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2
-Source0  : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2
-Source99 : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.0.0.tar.bz2.sig
+Version  : 1.1.0
+Release  : 18
+URL      : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
+Source0  : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
+Source99 : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -20,6 +20,9 @@ BuildRequires : gtk3-dev
 BuildRequires : libassuan-dev
 BuildRequires : libgpg-error-dev
 BuildRequires : ncurses-dev
+BuildRequires : pkgconfig(gcr-3)
+BuildRequires : pkgconfig(gtk+-2.0)
+BuildRequires : pkgconfig(libsecret-1)
 Patch1: 0001-add-pinentry-wrapper.patch
 
 %description
@@ -53,7 +56,7 @@ extras components for the pinentry package.
 
 
 %prep
-%setup -q -n pinentry-1.0.0
+%setup -q -n pinentry-1.1.0
 %patch1 -p1
 
 %build
@@ -61,9 +64,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503674606
+export SOURCE_DATE_EPOCH=1517802834
 %configure --disable-static --disable-pinentry-gtk2 --disable-pinentry-qt5 --enable-pinentry-gnome3 --enable-pinentry-curses
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %check
 export LANG=C
@@ -73,7 +76,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1503674606
+export SOURCE_DATE_EPOCH=1517802834
 rm -rf %{buildroot}
 %make_install
 ## make_install_append content
