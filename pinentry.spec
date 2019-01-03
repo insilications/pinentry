@@ -6,7 +6,7 @@
 #
 Name     : pinentry
 Version  : 1.1.0
-Release  : 20
+Release  : 21
 URL      : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source0  : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source99 : ftp://ftp.gnupg.org/gcrypt/pinentry/pinentry-1.1.0.tar.bz2.sig
