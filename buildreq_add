@@ -1,6 +1,7 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 libgpg-error-dev
+libgpg-error-extras
 libassuan-dev
 ncurses-dev
 gtk3-dev
