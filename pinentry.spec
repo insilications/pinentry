@@ -6,7 +6,7 @@
 #
 Name     : pinentry
 Version  : 1.1.0
-Release  : 22
+Release  : 23
 URL      : https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source0  : https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source99 : https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2.sig
@@ -78,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1558392484
+export SOURCE_DATE_EPOCH=1558454384
 export GCC_IGNORE_WERROR=1
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static --disable-pinentry-gtk2 --disable-pinentry-qt5 --enable-pinentry-gnome3 --enable-pinentry-curses
@@ -92,7 +92,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1558392484
+export SOURCE_DATE_EPOCH=1558454384
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pinentry
 cp COPYING %{buildroot}/usr/share/package-licenses/pinentry/COPYING
@@ -106,10 +106,10 @@ install -m 0755 pinentry-wrapper %{buildroot}/usr/bin/pinentry
 
 %files bin
 %defattr(-,root,root,-)
+%exclude /usr/bin/pinentry-fltk
 %exclude /usr/bin/pinentry-gnome3
 /usr/bin/pinentry
 /usr/bin/pinentry-curses
-/usr/bin/pinentry-fltk
 
 %files doc
 %defattr(0644,root,root,0755)
@@ -117,6 +117,7 @@ install -m 0755 pinentry-wrapper %{buildroot}/usr/bin/pinentry
 
 %files extras
 %defattr(-,root,root,-)
+/usr/bin/pinentry-fltk
 /usr/bin/pinentry-gnome3
 
 %files license
