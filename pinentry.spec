@@ -6,7 +6,7 @@
 #
 Name     : pinentry
 Version  : 1.1.0
-Release  : 23
+Release  : 24
 URL      : https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source0  : https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2
 Source99 : https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2.sig
@@ -23,7 +23,6 @@ BuildRequires : libassuan-dev
 BuildRequires : libcap-dev
 BuildRequires : libcap-ng-dev
 BuildRequires : libgpg-error-dev
-BuildRequires : libgpg-error-extras
 BuildRequires : ncurses-dev
 BuildRequires : pkgconfig(gcr-3)
 BuildRequires : pkgconfig(gtk+-2.0)
@@ -78,9 +77,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1558454384
+export SOURCE_DATE_EPOCH=1558483031
 export GCC_IGNORE_WERROR=1
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static --disable-pinentry-gtk2 --disable-pinentry-qt5 --enable-pinentry-gnome3 --enable-pinentry-curses
 make  %{?_smp_mflags}
 
@@ -92,7 +94,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1558454384
+export SOURCE_DATE_EPOCH=1558483031
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pinentry
 cp COPYING %{buildroot}/usr/share/package-licenses/pinentry/COPYING
