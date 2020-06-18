@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : pinentry
-Version  : 1.1.0
-Release  : 33
-URL      : file:///insilications/build/clearlinux/packages/pinentry/pinentry.zip
-Source0  : file:///insilications/build/clearlinux/packages/pinentry/pinentry.zip
+Version  : 20.05.08
+Release  : 34
+URL      : file:///insilications/build/clearlinux/packages/pinentry/pinentry-20.05.08.zip
+Source0  : file:///insilications/build/clearlinux/packages/pinentry/pinentry-20.05.08.zip
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -18,7 +18,6 @@ BuildRequires : buildreq-kde
 BuildRequires : fltk-dev
 BuildRequires : gcr-dev
 BuildRequires : gtk3-dev
-BuildRequires : libXcursor-dev
 BuildRequires : libassuan-dev
 BuildRequires : libcap-dev
 BuildRequires : libcap-ng-dev
@@ -34,7 +33,7 @@ BuildRequires : texinfo
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
-Patch1: 0001-Add-my-pinentry-wapper-for-qt5.patch
+Patch1: 0001-Add-my-pinentry-wrapper-for-qt5.patch
 
 %description
 PINEntry
@@ -59,8 +58,8 @@ info components for the pinentry package.
 
 
 %prep
-%setup -q -n pinentry
-cd %{_builddir}/pinentry
+%setup -q -n pinentry-20.05.08
+cd %{_builddir}/pinentry-20.05.08
 %patch1 -p1
 
 %build
@@ -71,7 +70,7 @@ unset http_proxy
 unset https_proxy
 unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1590393336
+export SOURCE_DATE_EPOCH=1592519154
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -104,7 +103,7 @@ unset no_proxy
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1590393336
+export SOURCE_DATE_EPOCH=1592519154
 rm -rf %{buildroot}
 %make_install
 ## install_append content
