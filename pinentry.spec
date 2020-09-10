@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : pinentry
 Version  : 1.1.0
-Release  : 36
+Release  : 37
 URL      : file:///insilications/build/clearlinux/packages/pinentry/pinentry-pinentry-1.1.0.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/pinentry/pinentry-pinentry-1.1.0.tar.gz
 Summary  : No detailed summary available
@@ -71,7 +71,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1599712204
+export SOURCE_DATE_EPOCH=1599721811
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -119,7 +119,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1599712204
+export SOURCE_DATE_EPOCH=1599721811
 rm -rf %{buildroot}
 %make_install
 ## install_append content
