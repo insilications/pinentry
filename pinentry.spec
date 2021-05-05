@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : pinentry
-Version  : 1.1.0
-Release  : 37
-URL      : file:///insilications/build/clearlinux/packages/pinentry/pinentry-pinentry-1.1.0.tar.gz
-Source0  : file:///insilications/build/clearlinux/packages/pinentry/pinentry-pinentry-1.1.0.tar.gz
+Version  : 8
+Release  : 38
+URL      : file:///aot/build/clearlinux/packages/pinentry/pinentry-8.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/pinentry/pinentry-8.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -26,6 +26,7 @@ BuildRequires : ncurses-dev
 BuildRequires : pkgconfig(Qt5Core)
 BuildRequires : pkgconfig(Qt5DBus)
 BuildRequires : pkgconfig(Qt5Gui)
+BuildRequires : pkgconfig(elementary)
 BuildRequires : pkgconfig(gcr-3)
 BuildRequires : pkgconfig(gtk+-2.0)
 BuildRequires : qtbase-dev
@@ -71,7 +72,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1599721811
+export SOURCE_DATE_EPOCH=1620250290
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,10 +104,15 @@ export MAKEFLAGS=%{?_smp_mflags}
 # export CCACHE_SLOPPINESS=pch_defines,locale,time_macros
 # export CCACHE_DISABLE=1
 ## altflags1 end
-##
-%define _lto_cflags 1
-##
-%configure --enable-shared --enable-static --enable-maintainer-mode --enable-pinentry-qt --enable-pinentry-gnome3 --enable-pinentry-gtk2 --disable-libsecret --enable-pinentry-ncurses --enable-pinentry-tty
+%configure --enable-shared \
+--enable-static \
+--enable-maintainer-mode \
+--enable-pinentry-qt \
+--disable-pinentry-gnome3 \
+--disable-pinentry-gtk2 \
+--disable-libsecret \
+--enable-pinentry-ncurses \
+--enable-pinentry-tty
 make  %{?_smp_mflags}
 
 
@@ -119,7 +125,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1599721811
+export SOURCE_DATE_EPOCH=1620250290
 rm -rf %{buildroot}
 %make_install
 ## install_append content
@@ -133,9 +139,8 @@ install -m 0755 pinentry-wrapper %{buildroot}/usr/bin/pinentry
 %defattr(-,root,root,-)
 /usr/bin/pinentry
 /usr/bin/pinentry-curses
+/usr/bin/pinentry-efl
 /usr/bin/pinentry-fltk
-/usr/bin/pinentry-gnome3
-/usr/bin/pinentry-gtk-2
 /usr/bin/pinentry-qt
 /usr/bin/pinentry-tty
 

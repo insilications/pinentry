@@ -8,3 +8,4 @@ libcap-ng-dev
 buildreq-kde
 gtk3-dev
 gcr-dev
+texinfo
