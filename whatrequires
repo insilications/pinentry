@@ -1,2 +1,6 @@
 # This file contains recursive sources that require this package
+flatpak
+flatpak-dev
 gnupg
+kleopatra
+kleopatra-dev
