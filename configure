@@ -1,9 +1,11 @@
---enable-shared
---enable-static
 --enable-maintainer-mode
---enable-pinentry-qt
+--disable-shared
+--enable-static
 --disable-pinentry-gnome3
 --disable-pinentry-gtk2
 --disable-libsecret
+--disable-pinentry-fltk
+--disable-pinentry-efl
 --enable-pinentry-ncurses
 --enable-pinentry-tty
+--enable-pinentry-qt

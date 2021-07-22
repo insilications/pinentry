@@ -1,5 +1,6 @@
 PKG_NAME := pinentry
-URL = https://github.com/gpg/pinentry.git
+URL = https://dev.gnupg.org/source/pinentry.git
 ARCHIVES = 
+ARCHIVES_GIT = 
 
 include ../common/Makefile.common

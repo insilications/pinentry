@@ -1,0 +1,3 @@
+sd -r '\s--dirty\s' ' ' . || :
+sd -r 'git describe' 'git describe --abbrev=0' . || :
+./autogen.sh
