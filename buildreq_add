@@ -7,6 +7,8 @@ libassuan-dev
 libcap-dev
 libcap-ng-dev
 libgpg-error-dev
+libsecret
+libsecret-dev
 libtool-dev
 libX11
 libX11-data
