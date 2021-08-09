@@ -9,5 +9,4 @@ libc.so.6
 libcap.so.2
 libgpg-error.so.0
 libncursesw.so.6
-libpthread.so.0
 libtinfow.so.6
