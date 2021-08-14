@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : pinentry
 Version  : 1.2
-Release  : 39
+Release  : 40
 URL      : file:///aot/build/clearlinux/packages/pinentry/pinentry-v1.2.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/pinentry/pinentry-v1.2.tar.gz
 Summary  : No detailed summary available
@@ -125,7 +125,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628496875
+export SOURCE_DATE_EPOCH=1628953872
 ## build_prepend content
 # ./autogen.sh --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/bin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/usr/com --mandir=/usr/share/man --infodir=/usr/share/info
 ## build_prepend end
@@ -232,7 +232,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1628496875
+export SOURCE_DATE_EPOCH=1628953872
 rm -rf %{buildroot}
 %make_install
 ## install_append content
